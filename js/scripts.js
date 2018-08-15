@@ -1,4 +1,4 @@
-var vowels = ["a","e","i","o","u","y"];
+var vowels;
 
 var letterChecker = function (inputStr) {
   if (inputStr.match(/^[a-zA-Z\s]+$/)) {
@@ -6,6 +6,15 @@ var letterChecker = function (inputStr) {
   }
   else {
     return false;
+  }
+}
+
+var yChecker = function (input){
+  if(input.charAt(0) === "y" || input.charAt(0) === "Y"){
+    vowels = ["a" ,"e", "i", "o" , "u", "A", "E", "I", "O", "U"];
+  }
+  else{
+    vowels = ["a" ,"e", "i", "o" , "u","y", "A", "E", "I", "O", "U" , "Y"];
   }
 }
 
@@ -29,16 +38,14 @@ var moveConsonants = function (input) {
 
 var vowelChecker = function(input){
   var resultWord = input;
-  var consonantSubStr ="";
+  var consonantSubStr;
+  yChecker(input);
 
-  if (input.charAt(0) === "y" || "Y") {
-    vowels = ["a","e","i","o","u"];
-    return moveConsonants(input);
-  }
   if(vowels.includes(input.charAt(0))) {
     resultWord += "way";
   }
-  else if (input.substring(0,2) ===  "qu" || "QU" || "Qu" || "qU") {
+
+   else if (input.substring(0,2) ===  "qu" || input.substring(0,2) ===  "QU" || input.substring(0,2) ===  "Qu" || input.substring(0,2) ===  "qU"){
     consonantSubStr = input.substring(0,2);
     resultWord = input.substring(2,input.length) +consonantSubStr+"ay";
   }
