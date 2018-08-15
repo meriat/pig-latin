@@ -1,5 +1,5 @@
 var vowels;
-
+//checking if the input string starts and ends with a letter
 var letterChecker = function (inputStr) {
   if (inputStr.match(/^[a-zA-Z\s]+$/)) {
     return true;
@@ -8,12 +8,13 @@ var letterChecker = function (inputStr) {
     return false;
   }
 }
-
+//checking for y
 var yChecker = function (input){
   if(input.charAt(0) === "y" || input.charAt(0) === "Y"){
     vowels = ["a" ,"e", "i", "o" , "u", "A", "E", "I", "O", "U"];
   }
   else{
+    //if input doesn't start with y, vowels include y
     vowels = ["a" ,"e", "i", "o" , "u","y", "A", "E", "I", "O", "U" , "Y"];
   }
 }
