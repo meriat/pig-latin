@@ -43,6 +43,6 @@ _This page takes in string and prints out a result by converting it by using pig
 
 
 ## Link to GitHub Pages
-* https://meriat.github.io/
+* https://meriat.github.io/pig-latin
 
 Copyright (c) 2016 **_Meria J Thomas_**
